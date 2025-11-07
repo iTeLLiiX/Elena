@@ -630,16 +630,16 @@ const multipleChoiceQuestions = [
 
 // Flashcard Data
 const flashcardData = [
-    { german: "Hallo", english: "Hello", georgian: "გამარჯობა (gamarjoba)" },
-    { german: "Danke", english: "Thank you", georgian: "მადლობა (madloba)" },
-    { german: "Bitte", english: "Please / You're welcome", georgian: "გთხოვთ (gtkhovt)" },
-    { german: "Guten Morgen", english: "Good morning", georgian: "დილა მშვიდობისა (dila mshvidobisa)" },
-    { german: "Guten Tag", english: "Good day", georgian: "გაგიმარჯოს (gagimarjos)" },
-    { german: "Auf Wiedersehen", english: "Goodbye", georgian: "ნახვამდის (nakhvamdis)" },
-    { german: "Tschüss", english: "Bye", georgian: "ნახვამდის (nakhvamdis)" },
-    { german: "Ja", english: "Yes", georgian: "დიახ (diakh)" },
-    { german: "Nein", english: "No", georgian: "არა (ara)" },
-    { german: "Entschuldigung", english: "Excuse me", georgian: "ბოდიში (bodishi)" }
+    { german: "Hallo", english: "Hello", romanian: "Salut" },
+    { german: "Danke", english: "Thank you", romanian: "Mulțumesc" },
+    { german: "Bitte", english: "Please / You're welcome", romanian: "Te rog" },
+    { german: "Guten Morgen", english: "Good morning", romanian: "Bună dimineața" },
+    { german: "Guten Tag", english: "Good day", romanian: "Bună ziua" },
+    { german: "Auf Wiedersehen", english: "Goodbye", romanian: "La revedere" },
+    { german: "Tschüss", english: "Bye", romanian: "Pa" },
+    { german: "Ja", english: "Yes", romanian: "Da" },
+    { german: "Nein", english: "No", romanian: "Nu" },
+    { german: "Entschuldigung", english: "Excuse me", romanian: "Scuză-mă" }
 ];
 
 // ============================================
@@ -752,7 +752,7 @@ function updateFlashcardDisplay() {
     document.getElementById('flashcardFront').textContent = card.german;
     document.querySelector('.flashcard-back .flashcard-content').innerHTML = `
         <div class="translation-item">🇬🇧 ${card.english}</div>
-        <div class="translation-item">🇬🇪 ${card.georgian}</div>
+        <div class="translation-item">🇷🇴 ${card.romanian}</div>
     `;
     
     document.getElementById('currentCard').textContent = currentFlashcardIndex + 1;
