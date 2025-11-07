@@ -46,10 +46,10 @@
                 <nav class="nav" id="mainNav">
                     <!-- Language Switcher -->
                 <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="de" title="Deutsch">
+                    <button class="lang-btn" data-lang="de" title="Deutsch">
                         🇩🇪
                     </button>
-                    <button class="lang-btn" data-lang="en" title="English">
+                    <button class="lang-btn active" data-lang="en" title="English">
                         🇬🇧
                     </button>
                     <button class="lang-btn" data-lang="ro" title="Română">
@@ -1381,6 +1381,22 @@
     
     <!-- JavaScript -->
     <script src="script.js"></script>
+    
+    <!-- Auto-load English for Elena -->
+    <script>
+        // Set English as default for Elena
+        if (!localStorage.getItem('deutschLernenLanguage')) {
+            localStorage.setItem('deutschLernenLanguage', 'en');
+        }
+        
+        // Auto-load English on first visit
+        window.addEventListener('load', function() {
+            const lang = localStorage.getItem('deutschLernenLanguage') || 'en';
+            if (typeof changeLanguage === 'function') {
+                setTimeout(() => changeLanguage(lang), 100);
+            }
+        });
+    </script>
     
     <!-- Service Worker Registration -->
     <script>
