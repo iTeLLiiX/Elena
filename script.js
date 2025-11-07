@@ -478,9 +478,9 @@ const translations = {
         'achievements-unlock': 'Deblochează',
         
         // Footer
-        'footer-dedication': 'Pentru Elena 🌸',
+        'footer-dedication': 'Pentru Elena 🇷🇴',
         'footer-quote': 'Învățarea este o călătorie, nu o destinație',
-        'footer-from': 'Cu dragoste de la Matthias 💝',
+        'footer-from': 'De la Matthias 👨‍🏫',
         
         // C1 Preparation
         'c1-ready': 'Pregătit pentru examenul C1?',
