@@ -842,12 +842,12 @@ async function startRecording() {
         btn.innerHTML = '<i class="fa-solid fa-stop"></i> <span data-translate="stop-recording">Aufnahme stoppen</span>';
         btn.classList.add('recording');
         document.getElementById('recorderVisual').classList.add('active');
-        document.getElementById('recordingStatus').textContent = '🔴 Aufnahme läuft...';
+        document.getElementById('recordingStatus').textContent = '🔴 Recording...';
         
         changeLanguage(currentLanguage);
     } catch (error) {
-        console.error('Mikrofon-Zugriff verweigert:', error);
-        alert('Bitte erlauben Sie den Zugriff auf das Mikrofon.');
+        console.error('Microphone access denied:', error);
+        alert('Please allow access to the microphone.');
     }
 }
 
@@ -861,7 +861,7 @@ function stopRecording() {
         btn.innerHTML = '<i class="fa-solid fa-microphone"></i> <span data-translate="start-recording">Aufnahme starten</span>';
         btn.classList.remove('recording');
         document.getElementById('recorderVisual').classList.remove('active');
-        document.getElementById('recordingStatus').textContent = '✅ Aufnahme abgeschlossen!';
+        document.getElementById('recordingStatus').textContent = '✅ Recording completed!';
         
         changeLanguage(currentLanguage);
     }
@@ -926,7 +926,7 @@ function handleAudioFiles(files) {
                 </div>
                 <audio controls src="${url}"></audio>
                 <button class="btn btn-outline btn-sm" onclick="this.parentElement.remove()">
-                    <i class="fa-solid fa-trash"></i> Löschen
+                    <i class="fa-solid fa-trash"></i> Delete
                 </button>
             `;
             
@@ -984,10 +984,11 @@ function checkArticle(selectedArticle) {
     if (selectedArticle === question.article) {
         articleScore++;
         updateTotalPoints(10);
+        incrementExercises(); // Track stats
         feedbackEl.innerHTML = `
             <div class="feedback-correct">
                 <i class="fa-solid fa-check-circle"></i>
-                <strong>Richtig!</strong> Es heißt "${question.article} ${question.word}" (${question.translation})
+                <strong>Correct!</strong> It's "${question.article} ${question.word}" (${question.translation})
             </div>
         `;
         buttons.forEach(btn => {
@@ -999,7 +1000,7 @@ function checkArticle(selectedArticle) {
         feedbackEl.innerHTML = `
             <div class="feedback-incorrect">
                 <i class="fa-solid fa-times-circle"></i>
-                <strong>Falsch!</strong> Die richtige Antwort ist "${question.article} ${question.word}" (${question.translation})
+                <strong>Wrong!</strong> The correct answer is "${question.article} ${question.word}" (${question.translation})
             </div>
         `;
         buttons.forEach(btn => {
@@ -1026,22 +1027,22 @@ function finishArticleQuiz() {
     
     let message = '';
     if (percentage === 100) {
-        message = '🏆 Perfekt! Ausgezeichnete Arbeit!';
+        message = '🏆 Perfect! Excellent work!';
     } else if (percentage >= 80) {
-        message = '🌟 Sehr gut! Fast perfekt!';
+        message = '🌟 Very good! Almost perfect!';
     } else if (percentage >= 60) {
-        message = '👍 Gut gemacht! Weiter so!';
+        message = '👍 Well done! Keep it up!';
     } else {
-        message = '💪 Übe weiter, du wirst besser!';
+        message = '💪 Keep practicing, you'll improve!';
     }
     
     feedbackEl.innerHTML = `
         <div class="feedback-complete">
             <h4>${message}</h4>
-            <p>Du hast ${articleScore} von ${articleQuestions.length} Fragen richtig beantwortet (${percentage.toFixed(0)}%)</p>
+            <p>You answered ${articleScore} out of ${articleQuestions.length} questions correctly (${percentage.toFixed(0)}%)</p>
             <button class="btn btn-primary" onclick="initArticleQuiz()">
                 <i class="fa-solid fa-rotate"></i>
-                Noch einmal
+                Try Again
             </button>
         </div>
     `;
@@ -1087,21 +1088,21 @@ function checkFillBlanks() {
         feedbackEl.innerHTML = `
             <div class="feedback-correct">
                 <i class="fa-solid fa-trophy"></i>
-                <strong>Perfekt!</strong> Alle ${correctCount} Antworten sind richtig! +${points} Punkte
+                <strong>Perfect!</strong> All ${correctCount} answers are correct! +${points} Points
             </div>
         `;
     } else if (percentage >= 60) {
         feedbackEl.innerHTML = `
             <div class="feedback-partial">
                 <i class="fa-solid fa-check-circle"></i>
-                <strong>Gut!</strong> ${correctCount} von ${totalBlanks} richtig. +${points} Punkte
+                <strong>Good!</strong> ${correctCount} out of ${totalBlanks} correct. +${points} Points
             </div>
         `;
     } else {
         feedbackEl.innerHTML = `
             <div class="feedback-incorrect">
                 <i class="fa-solid fa-info-circle"></i>
-                <strong>Übe weiter!</strong> ${correctCount} von ${totalBlanks} richtig. +${points} Punkte
+                <strong>Keep practicing!</strong> ${correctCount} out of ${totalBlanks} correct. +${points} Points
             </div>
         `;
     }
@@ -1155,10 +1156,11 @@ function checkMCAnswer(selectedIndex) {
     if (selectedIndex === question.correct) {
         mcScore++;
         updateTotalPoints(10);
+        incrementExercises(); // Track stats
         feedbackEl.innerHTML = `
             <div class="feedback-correct">
                 <i class="fa-solid fa-check-circle"></i>
-                <strong>Richtig!</strong> Das ist die korrekte Antwort.
+                <strong>Correct!</strong> That's the right answer.
             </div>
         `;
         buttons[selectedIndex].classList.add('correct');
@@ -1166,7 +1168,7 @@ function checkMCAnswer(selectedIndex) {
         feedbackEl.innerHTML = `
             <div class="feedback-incorrect">
                 <i class="fa-solid fa-times-circle"></i>
-                <strong>Falsch!</strong> Die richtige Antwort ist: ${question.options[question.correct]}
+                <strong>Wrong!</strong> The correct answer is: ${question.options[question.correct]}
             </div>
         `;
         buttons[selectedIndex].classList.add('incorrect');
@@ -1187,22 +1189,22 @@ function finishMCQuiz() {
     
     let message = '';
     if (percentage === 100) {
-        message = '🏆 Perfekt! Du bist ein Meister!';
+        message = '🏆 Perfect! You are a master!';
     } else if (percentage >= 80) {
-        message = '🌟 Ausgezeichnet! Sehr gut gemacht!';
+        message = '🌟 Excellent! Very well done!';
     } else if (percentage >= 60) {
-        message = '👍 Gut! Du lernst schnell!';
+        message = '👍 Good! You learn fast!';
     } else {
-        message = '💪 Bleib dran! Übung macht den Meister!';
+        message = '💪 Keep going! Practice makes perfect!';
     }
     
     feedbackEl.innerHTML = `
         <div class="feedback-complete">
             <h4>${message}</h4>
-            <p>Du hast ${mcScore} von ${mcQuestions.length} Fragen richtig beantwortet (${percentage.toFixed(0)}%)</p>
+            <p>You answered ${mcScore} out of ${mcQuestions.length} questions correctly (${percentage.toFixed(0)}%)</p>
             <button class="btn btn-primary" onclick="initMCQuiz()">
                 <i class="fa-solid fa-rotate"></i>
-                Noch einmal
+                Try Again
             </button>
         </div>
     `;
@@ -1958,29 +1960,8 @@ function showNotification(message, type = 'info') {
     }, 2500);
 }
 
-// ============================================
-// UPDATE EXISTING FUNCTIONS TO TRACK STATS
-// ============================================
-const originalCheckArticle = checkArticle;
-function checkArticle(selectedArticle) {
-    originalCheckArticle(selectedArticle);
-    incrementExercises();
-    if (currentArticleQuestion === 0) {
-        addLearningTime(2);
-    }
-}
-
-const originalCheckMCAnswer = checkMCAnswer;
-function checkMCAnswer(selectedIndex) {
-    originalCheckMCAnswer(selectedIndex);
-    incrementExercises();
-}
-
-const originalMarkAsKnown = markAsKnown;
-function markAsKnown() {
-    originalMarkAsKnown();
-    incrementVocabLearned();
-}
+// Stats are now integrated directly in the original functions above
+// No need to override them here
 
 // ============================================
 // LOAD FAVORITES ON START
