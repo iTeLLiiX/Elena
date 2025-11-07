@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch Meistern | Für Elena</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                <div class="logo-text">
+                    <span class="logo-title">Deutsch Meistern</span>
+                    <span class="logo-subtitle">Für Elena 💕</span>
+                </div>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                
+                <nav class="nav" id="mainNav">
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="de">🇩🇪</button>
+                        <button class="lang-btn" data-lang="en">🇬🇧</button>
+                        <button class="lang-btn" data-lang="ro">🇷🇴</button>
+                    </div>
+                    
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    
+                    <a href="klassenraum.html" class="nav-link">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <span>Klassenraum</span>
+                    </a>
+                    <a href="lektionen.html" class="nav-link">
+                        <i class="fa-solid fa-list"></i>
+                        <span>Alle Lektionen (A1-C2)</span>
+                    </a>
+                    <a href="#vokabeln" class="nav-link">
+                        <i class="fa-solid fa-book"></i>
+                        <span data-translate="nav-vocab">Vokabeln</span>
+                    </a>
+                    <a href="#grammatik" class="nav-link">
+                        <i class="fa-solid fa-language"></i>
+                        <span data-translate="nav-grammar">Grammatik</span>
+                    </a>
+                    <a href="#aussprache" class="nav-link">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <span data-translate="nav-pronunciation">Aussprache</span>
+                    </a>
+                    <a href="#uebungen" class="nav-link">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span data-translate="nav-exercises">Übungen</span>
+                    </a>
+                    <a href="#flashcards" class="nav-link">
+                        <i class="fa-solid fa-clone"></i>
+                        <span data-translate="nav-flashcards">Karten</span>
+                    </a>
+                    <a href="tests.html" class="nav-link nav-link-special">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <span>Tests & C1 Prüfung</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Für Elena 💕 | 3 Monate uns! 🎉</span>
+                </div>
+                <h1 class="hero-title">Bună, Elena! Dein Weg zu perfektem Deutsch</h1>
+                <p class="hero-subtitle">Von Matthias mit Liebe zusammengestellt ❤️ | 05.08.2024 - 05.11.2024</p>
+                <p class="hero-description">Zum 3-Monats-Jubiläum: Eine personalisierte Lernplattform mit allem, was du brauchst - komplett mit rumänischer Übersetzung! Te iubesc! 💝</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="section">
+        <div class="container">
+            <div class="welcome-card">
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="welcome-content">
+                    <h2>Iubita mea, Elena! 💕</h2>
+                    <p><strong>Zum 3-Monats-Jubiläum (05.08 - 05.11)!</strong></p>
+                    <p>Dein Matthias hat diese komplette Lernplattform speziell für dich erstellt! Von A1 bis C2, mit Tests, Spielen, interaktivem Klassenraum und <strong>vollständiger rumänischer Übersetzung</strong>! Alles, was du brauchst, um perfektes Deutsch zu lernen. Te iubesc mult! ❤️</p>
+                    <div class="welcome-features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Alltagsvokabeln & nützliche Ausdrücke</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Praktische Grammatik für den Alltag</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Konversations-Training</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Kultur & deutsche Redewendungen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section id="vokabeln" class="section section-alt">
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-label"><i class="fa-solid fa-book"></i> Vokabeln für den Alltag</span>
+                <h2 class="section-title">Nützliche Wörter & Ausdrücke</h2>
+                <p class="section-description">Erweitere deinen Wortschatz mit praktischen Vokabeln</p>
+            </div>
+
+            <!-- B1: Daily Life & Shopping -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-icon">
+                        <i class="fa-solid fa-shopping-bag"></i>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-level level-b1">B1</span>
+                        <h3>Einkaufen & Alltag</h3>
+                        <p>Im Supermarkt, beim Shopping, im Alltag</p>
+                    </div>
+                </div>
+                
+                <div class="vocab-grid">
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">der Einkaufswagen</span>
+                            <button class="audio-btn" onclick="speakWord('der Einkaufswagen')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Shopping Cart</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Ich brauche einen Einkaufswagen für meinen Großeinkauf."
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">das Sonderangebot</span>
+                            <button class="audio-btn" onclick="speakWord('das Sonderangebot')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Special Offer</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Diese Woche gibt es ein tolles Sonderangebot!"
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">die Umkleidekabine</span>
+                            <button class="audio-btn" onclick="speakWord('die Umkleidekabine')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Fitting Room</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Wo ist die Umkleidekabine? Ich möchte das anprobieren."
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">der Kassenzettel</span>
+                            <button class="audio-btn" onclick="speakWord('der Kassenzettel')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Receipt</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Bitte bewahren Sie den Kassenzettel auf!"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B2: Relationships & Feelings -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-level level-b2">B2</span>
+                        <h3>Beziehungen & Gefühle</h3>
+                        <p>Emotionen ausdrücken, Beziehungen beschreiben</p>
+                    </div>
+                </div>
+                
+                <div class="vocab-grid">
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">sich verlieben</span>
+                            <button class="audio-btn" onclick="speakWord('sich verlieben')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">To fall in love</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Ich habe mich sofort in ihn verliebt."
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">die Zuneigung</span>
+                            <button class="audio-btn" onclick="speakWord('die Zuneigung')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Affection</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Er zeigt mir seine Zuneigung jeden Tag."
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">die Geborgenheit</span>
+                            <button class="audio-btn" onclick="speakWord('die Geborgenheit')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Security / Comfort</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Bei ihm fühle ich Geborgenheit und Sicherheit."
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">das Vertrauen</span>
+                            <button class="audio-btn" onclick="speakWord('das Vertrauen')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Trust</div>
+                        <div class="vocab-example">
+                            <strong>Beispiel:</strong> "Vertrauen ist die Basis jeder guten Beziehung."
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C1: Romantic Expressions -->
+            <div class="lesson-card">
+                <div class="lesson-header">
+                    <div class="lesson-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-level level-c1">C1</span>
+                        <h3>Romantische Redewendungen</h3>
+                        <p>Liebevolle Ausdrücke & Sprichwörter</p>
+                    </div>
+                </div>
+                
+                <div class="vocab-grid">
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">Du bist die Liebe meines Lebens</span>
+                            <button class="audio-btn" onclick="speakWord('Du bist die Liebe meines Lebens')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">You are the love of my life</div>
+                        <div class="vocab-example">
+                            <strong>Verwendung:</strong> Romantische Liebeserklärung ❤️
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">Glück im Spiel, Pech in der Liebe</span>
+                            <button class="audio-btn" onclick="speakWord('Glück im Spiel, Pech in der Liebe')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">Lucky at cards, unlucky in love</div>
+                        <div class="vocab-example">
+                            <strong>Bedeutung:</strong> Ein deutsches Sprichwort über Glück
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">Für dich gehe ich durchs Feuer</span>
+                            <button class="audio-btn" onclick="speakWord('Für dich gehe ich durchs Feuer')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">I'd walk through fire for you</div>
+                        <div class="vocab-example">
+                            <strong>Bedeutung:</strong> Ich würde alles für dich tun!
+                        </div>
+                    </div>
+
+                    <div class="vocab-card-advanced">
+                        <div class="vocab-word-advanced">
+                            <span class="word-german-advanced">Du bedeutest mir die Welt</span>
+                            <button class="audio-btn" onclick="speakWord('Du bedeutest mir die Welt')">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+                        <div class="vocab-translation">You mean the world to me</div>
+                        <div class="vocab-example">
+                            <strong>Verwendung:</strong> Du bist mir sehr wichtig! 💕
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grammar Section -->
+    <section id="grammatik" class="section">
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-label"><i class="fa-solid fa-language"></i> Praktische Grammatik</span>
+                <h2 class="section-title">Wichtige Strukturen</h2>
+                <p class="section-description">Grammatik, die du wirklich brauchst</p>
+            </div>
+
+            <div class="grammar-advanced-grid">
+                <!-- Weil vs Denn -->
+                <div class="grammar-advanced-card">
+                    <div class="grammar-advanced-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <h3>"weil" vs "denn"</h3>
+                    <p class="grammar-desc">Beide bedeuten "because", aber...</p>
+                    
+                    <div class="grammar-examples">
+                        <div class="grammar-example-item">
+                            <strong>weil:</strong> Ich bleibe zu Hause, <span class="highlight">weil ich krank bin</span>.
+                            <br><small>(Verb am Ende!)</small>
+                        </div>
+                        <div class="grammar-example-item">
+                            <strong>denn:</strong> Ich bleibe zu Hause, <span class="highlight">denn ich bin krank</span>.
+                            <br><small>(Normale Wortstellung)</small>
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-rules">
+                        <h4>Regel:</h4>
+                        <ul>
+                            <li><strong>weil</strong> = Nebensatz (Verb ans Ende)</li>
+                            <li><strong>denn</strong> = Hauptsatz (normale Stellung)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Adjektivdeklination -->
+                <div class="grammar-advanced-card">
+                    <div class="grammar-advanced-icon">
+                        <i class="fa-solid fa-spell-check"></i>
+                    </div>
+                    <h3>Adjektiv-Endungen</h3>
+                    <p class="grammar-desc">Der/Die/Das + Adjektiv</p>
+                    
+                    <div class="grammar-examples">
+                        <div class="grammar-example-item">
+                            <strong>der:</strong> Der gut<span class="highlight">e</span> Mann
+                        </div>
+                        <div class="grammar-example-item">
+                            <strong>die:</strong> Die schön<span class="highlight">e</span> Frau
+                        </div>
+                        <div class="grammar-example-item">
+                            <strong>das:</strong> Das süß<span class="highlight">e</span> Kind
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-rules">
+                        <h4>Nach bestimmtem Artikel:</h4>
+                        <ul>
+                            <li>Nominativ: -e (alle)</li>
+                            <li>Akkusativ: -e (der → -en)</li>
+                            <li>Dativ: -en (alle)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Modalverben -->
+                <div class="grammar-advanced-card">
+                    <div class="grammar-advanced-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>Modalverben</h3>
+                    <p class="grammar-desc">können, müssen, wollen, dürfen...</p>
+                    
+                    <div class="grammar-examples">
+                        <div class="grammar-example-item">
+                            <strong>können:</strong> Ich <span class="highlight">kann</span> Deutsch sprechen.
+                        </div>
+                        <div class="grammar-example-item">
+                            <strong>müssen:</strong> Ich <span class="highlight">muss</span> heute arbeiten.
+                        </div>
+                        <div class="grammar-example-item">
+                            <strong>wollen:</strong> Ich <span class="highlight">will</span> dich sehen.
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-rules">
+                        <h4>Struktur:</h4>
+                        <ul>
+                            <li>Modalverb + Infinitiv (am Ende)</li>
+                            <li>Ich möchte mit dir sprechen.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Präpositionen mit Dativ -->
+                <div class="grammar-advanced-card">
+                    <div class="grammar-advanced-icon">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <h3>Präpositionen + Dativ</h3>
+                    <p class="grammar-desc">Aus, bei, mit, nach, seit, von, zu</p>
+                    
+                    <div class="grammar-examples">
+                        <div class="grammar-example-item">
+                            <strong>mit:</strong> Ich gehe <span class="highlight">mit dir</span> spazieren.
+                        </div>
+                        <div class="grammar-example-item">
+                            <strong>bei:</strong> Ich wohne <span class="highlight">bei meinen Eltern</span>.
+                        </div>
+                        <div class="grammar-example-item">
+                            <strong>zu:</strong> Kommst du <span class="highlight">zu mir</span>?
+                        </div>
+                    </div>
+                    
+                    <div class="grammar-rules">
+                        <h4>Merksatz:</h4>
+                        <ul>
+                            <li>"Aus, bei, mit, nach, seit, von, zu - Dativ stets, das weißt du!"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Month Anniversary Special -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="cta-box" style="background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%); border: 3px solid #ef4444; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; right: 0; font-size: 200px; opacity: 0.1;">💕</div>
+                <div class="cta-icon" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="cta-content" style="position: relative; z-index: 1;">
+                    <h2 style="color: #991b1b;">🎉 3 Monate uns! 🎉</h2>
+                    <p style="font-size: 20px; font-weight: 700; color: #991b1b; margin-bottom: 20px;">
+                        05. August 2024 - 05. November 2024
+                    </p>
+                    <p style="font-size: 18px; line-height: 1.8; color: #7f1d1d;">
+                        <strong>"Meine liebe Elena,</strong><br><br>
+                        Zum 3-Monats-Jubiläum habe ich diese komplette Lernplattform für dich erstellt! 
+                        Sie beinhaltet ALLES: Vokabeln, Grammatik, Tests, Spiele, einen interaktiven Klassenraum und sogar eine C1-Prüfungssimulation. 
+                        Ich habe auch rumänische Übersetzungen eingebaut, damit du alles verstehst!<br><br>
+                        
+                        Diese drei Monate mit dir waren die schönsten meines Lebens. 
+                        Ich bin so stolz auf dich und deine Fortschritte - nicht nur beim Deutsch lernen, sondern in allem! 
+                        Du bist stark, intelligent und wundervoll. ❤️<br><br>
+                        
+                        Mit dieser Plattform kannst du dein Deutsch perfektionieren und wir können gemeinsam üben und lernen. 
+                        Ich liebe dich mehr als Worte sagen können!<br><br>
+                        
+                        Te iubesc, Elena! 💝<br><br>
+                        
+                        <strong>- Dein Matthias, für immer ❤️"</strong>
+                    </p>
+                    <p style="margin-top: 30px; font-size: 24px; text-align: center; color: #991b1b;">
+                        🌹 Elena & Matthias 🌹<br>
+                        <small style="font-size: 16px;">05.08.2024 - ♾️</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Link to Tests -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="cta-content">
+                    <h2>Teste dein Wissen!</h2>
+                    <p>Bereit für Tests und die C1-Prüfung?</p>
+                    <a href="tests.html" class="btn btn-primary btn-large">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        Zu den Tests
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Deutsch Meistern</h4>
+                    <p>Für Elena - Mit Liebe von Matthias ❤️</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <a href="lektionen.html">Alle Lektionen</a>
+                    <a href="tests.html">Tests</a>
+                    <a href="klassenraum.html">Klassenraum</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Deutsch Meistern. Für Elena 🌸 | Von Matthias mit ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+        function speakWord(word) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(word);
+                utterance.lang = 'de-DE';
+                utterance.rate = 0.8;
+                speechSynthesis.speak(utterance);
+            }
+        }
+    </script>
+</body>
+</html>
+

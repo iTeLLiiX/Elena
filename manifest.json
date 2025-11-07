@@ -1,0 +1,22 @@
+{
+  "name": "Deutsch Meistern | Für Elena 🌸",
+  "short_name": "Deutsch Elena",
+  "description": "Personalisierte Deutsch-Lernplattform für Elena - Von Matthias mit Liebe ❤️",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fef3c7",
+  "theme_color": "#f7b267",
+  "icons": [
+    {
+      "src": "../Mari/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../Mari/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
