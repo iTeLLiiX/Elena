@@ -322,33 +322,33 @@ function updateProgressFromMain() {
 function startActivity(activityId) {
     const activities = {
         'warmup': {
-            title: 'Warm-up: Schnelles Vokabel-Spiel',
-            description: 'Bereit? Wir starten mit einem schnellen Spiel!',
+            title: 'Warm-up: Quick Vocabulary Game',
+            description: 'Ready? Let us start with a quick game!',
             action: () => startGame('wordmatch')
         },
         'vocabulary': {
-            title: 'Neue Vokabeln lernen',
-            description: 'Zeit für neue Wörter!',
+            title: 'Learn new vocabulary',
+            description: 'Time for new words!',
             action: () => window.location.href = 'index.html#vokabeln'
         },
         'conversation': {
-            title: 'Konversations-Praxis',
-            description: 'Lass uns zusammen sprechen!',
+            title: 'Conversation Practice',
+            description: 'Let us speak together!',
             action: () => startScenario('restaurant')
         },
         'grammar': {
-            title: 'Grammatik-Workshop',
-            description: 'Grammatik macht Spaß!',
+            title: 'Grammar Workshop',
+            description: 'Grammar is fun!',
             action: () => window.location.href = 'index.html#grammatik'
         },
         'speaking': {
-            title: 'Sprech-Übung',
-            description: 'Nimm deine Stimme auf!',
+            title: 'Speaking Exercise',
+            description: 'Record your voice!',
             action: () => window.location.href = 'index.html#practiceWord'
         },
         'homework': {
-            title: 'Hausaufgaben',
-            description: 'Zeit zum Schreiben!',
+            title: 'Homework',
+            description: 'Time to write!',
             action: () => switchNotebook('daily')
         }
     };
@@ -383,7 +383,7 @@ function closeGame() {
 
 // Word Match Game
 function initWordMatchGame() {
-    document.getElementById('gameTitle').textContent = 'Wort-Match';
+    document.getElementById('gameTitle').textContent = 'Word Match';
     document.getElementById('gameScore').textContent = '0';
     
     const words = [
@@ -424,7 +424,7 @@ function initWordMatchGame() {
                 `).join('')}
             </div>
             <div style="text-align: center; margin-top: 40px; font-size: 16px; color: #64748b;">
-                Runde: ${currentRound + 1} / ${words.length}
+                Round: ${currentRound + 1} / ${words.length}
             </div>
         `;
     }
@@ -433,7 +433,7 @@ function initWordMatchGame() {
         if (selected === correct) {
             score += 10;
             document.getElementById('gameScore').textContent = score;
-            showNotification('✅ Richtig!', 'success');
+            showNotification('✅ Correct!', 'success');
             
             currentRound++;
             if (currentRound < words.length) {
@@ -448,7 +448,7 @@ function initWordMatchGame() {
                                 Du hast <strong>${score}</strong> Punkte erreicht!
                             </p>
                             <button onclick="closeGame()" class="btn btn-primary btn-large">
-                                Fertig
+                                Done
                             </button>
                         </div>
                     `;
@@ -456,7 +456,7 @@ function initWordMatchGame() {
                 }, 500);
             }
         } else {
-            showNotification('❌ Falsch! Versuch es nochmal!', 'error');
+            showNotification('❌ Wrong! Try again!', 'error');
         }
     };
     
@@ -465,7 +465,7 @@ function initWordMatchGame() {
 
 // Speed Typing Game
 function initSpeedTypingGame() {
-    document.getElementById('gameTitle').textContent = 'Schnell-Tipper';
+    document.getElementById('gameTitle').textContent = 'Speed Typer';
     
     const words = ['Hallo', 'Danke', 'Bitte', 'Tschüss', 'Ja', 'Nein', 'Guten Morgen', 'Guten Tag', 'Auf Wiedersehen', 'Entschuldigung'];
     let score = 0;
@@ -481,7 +481,7 @@ function initSpeedTypingGame() {
                     <h2>Super schnell!</h2>
                     <p style="font-size: 24px; margin: 20px 0;">Zeit: <strong>${totalTime}s</strong></p>
                     <p>Punkte: <strong>${score}</strong></p>
-                    <button onclick="closeGame()" class="btn btn-primary btn-large" style="margin-top: 20px;">Fertig</button>
+                    <button onclick="closeGame()" class="btn btn-primary btn-large" style="margin-top: 20px;">Done</button>
                 </div>
             `;
             updateGameHighscore('speedtyping', score);
@@ -497,8 +497,8 @@ function initSpeedTypingGame() {
                 <input type="text" id="typeInput" 
                        style="width: 100%; max-width: 400px; padding: 20px; font-size: 24px; 
                               text-align: center; border: 3px solid #e2e8f0; border-radius: 16px;"
-                       placeholder="Tippe hier..." autocomplete="off" autofocus>
-                <p style="margin-top: 20px; color: #64748b;">Wort ${currentWord + 1} / ${words.length}</p>
+                       placeholder="Type here..." autocomplete="off" autofocus>
+                <p style="margin-top: 20px; color: #64748b;">Word ${currentWord + 1} / ${words.length}</p>
             </div>
         `;
         
@@ -582,7 +582,7 @@ function initMemoryGame() {
                                 <div style="font-size: 72px; margin-bottom: 20px;">🎉</div>
                                 <h2>Alle gefunden!</h2>
                                 <p style="font-size: 20px; margin: 20px 0;">In <strong>${moves}</strong> Zügen!</p>
-                                <button onclick="closeGame()" class="btn btn-primary btn-large">Fertig</button>
+                                <button onclick="closeGame()" class="btn btn-primary btn-large">Done</button>
                             </div>
                         `;
                     }, 500);
@@ -603,10 +603,10 @@ function initMemoryGame() {
 
 // Sentence Builder Game
 function initSentenceBuilderGame() {
-    document.getElementById('gameTitle').textContent = 'Satz-Baumeister';
+    document.getElementById('gameTitle').textContent = 'Sentence Builder';
     
     const sentences = [
-        { words: ['Ich', 'bin', 'Mariami'], correct: 'Ich bin Mariami' },
+        { words: ['Ich', 'bin', 'Elena'], correct: 'Ich bin Elena' },
         { words: ['Guten', 'Morgen', '!'], correct: 'Guten Morgen !' },
         { words: ['Wie', 'geht', 'es', 'dir', '?'], correct: 'Wie geht es dir ?' },
         { words: ['Ich', 'komme', 'aus', 'Georgien'], correct: 'Ich komme aus Georgien' }
@@ -679,9 +679,9 @@ function initSentenceBuilderGame() {
                     document.getElementById('gameBody').innerHTML = `
                         <div style="text-align: center;">
                             <div style="font-size: 72px; margin-bottom: 20px;">🌟</div>
-                            <h2>Alle Sätze korrekt!</h2>
+                            <h2>All sentences correct!</h2>
                             <p style="font-size: 20px; margin: 20px 0;">Score: <strong>${score}</strong></p>
-                            <button onclick="closeGame()" class="btn btn-primary btn-large">Fertig</button>
+                            <button onclick="closeGame()" class="btn btn-primary btn-large">Done</button>
                         </div>
                     `;
                 }, 500);
@@ -696,21 +696,21 @@ function initSentenceBuilderGame() {
 
 // Listening Game
 function initListeningGame() {
-    document.getElementById('gameTitle').textContent = 'Hör-Challenge';
+    document.getElementById('gameTitle').textContent = 'Listening Challenge';
     document.getElementById('gameBody').innerHTML = `
         <div style="text-align: center;">
             <p style="font-size: 18px; color: #64748b; margin-bottom: 30px;">
-                Höre das Wort und tippe es korrekt!
+                Listen to the word and type it correctly!
             </p>
             <button onclick="speakWord('Hallo')" class="btn btn-primary btn-large" style="margin-bottom: 30px;">
-                <i class="fa-solid fa-volume-high"></i> Wort anhören
+                <i class="fa-solid fa-volume-high"></i> Listen to word
             </button>
             <input type="text" id="listeningInput" 
                    style="width: 100%; max-width: 400px; padding: 20px; font-size: 24px; 
                           text-align: center; border: 3px solid #e2e8f0; border-radius: 16px;"
-                   placeholder="Tippe das Wort..." autocomplete="off">
+                   placeholder="Type the word..." autocomplete="off">
             <button onclick="checkListening()" class="btn btn-primary" style="margin-top: 20px;">
-                Prüfen
+                Check
             </button>
         </div>
     `;
@@ -719,16 +719,16 @@ function initListeningGame() {
 function checkListening() {
     const input = document.getElementById('listeningInput').value;
     if (input.toLowerCase() === 'hallo') {
-        showNotification('✅ Richtig gehört!', 'success');
+        showNotification('✅ Correctly heard!', 'success');
         setTimeout(closeGame, 1500);
     } else {
-        showNotification('❌ Nicht ganz! Hör nochmal genau hin!', 'error');
+        showNotification('❌ Not quite! Listen carefully again!', 'error');
     }
 }
 
 // Article Rush Game
 function initArticleRushGame() {
-    document.getElementById('gameTitle').textContent = 'Artikel-Rush';
+    document.getElementById('gameTitle').textContent = 'Article Rush';
     
     const words = [
         { word: 'Haus', article: 'das' },
@@ -754,7 +754,7 @@ function initArticleRushGame() {
                     <h2>Blitzschnell!</h2>
                     <p style="font-size: 24px; margin: 20px 0;">Zeit: <strong>${totalTime}s</strong></p>
                     <p>Punkte: <strong>${score}</strong></p>
-                    <button onclick="closeGame()" class="btn btn-primary btn-large" style="margin-top: 20px;">Fertig</button>
+                    <button onclick="closeGame()" class="btn btn-primary btn-large" style="margin-top: 20px;">Done</button>
                 </div>
             `;
             updateGameHighscore('articlerush', score);
@@ -798,11 +798,11 @@ function initArticleRushGame() {
         if (selected === correct) {
             score += 10;
             document.getElementById('gameScore').textContent = score;
-            showNotification('✅ Richtig!', 'success');
+            showNotification('✅ Correct!', 'success');
             currentWord++;
             setTimeout(renderArticleRush, 300);
         } else {
-            showNotification(`❌ Falsch! Es ist "${correct}"`, 'error');
+            showNotification(`❌ Wrong! It is "${correct}"`, 'error');
             currentWord++;
             setTimeout(renderArticleRush, 1000);
         }
@@ -835,17 +835,17 @@ function openChapter(chapterNum) {
         showLockedMessage();
         return;
     }
-    showNotification(`📖 Kapitel ${chapterNum} wird geöffnet...`, 'info');
+    showNotification(`📖 Opening chapter ${chapterNum}...`, 'info');
     setTimeout(() => window.location.href = 'lektionen.html', 1000);
 }
 
 function showLockedMessage() {
-    showNotification('🔒 Dieses Kapitel wird freigeschaltet, wenn du das vorherige abgeschlossen hast!', 'info');
+    showNotification('🔒 This chapter unlocks when you complete the previous one!', 'info');
 }
 
 // Daily Challenge
 function startDailyChallenge() {
-    showNotification('🚀 Challenge gestartet! Nutze das Voice Recording auf der Hauptseite!', 'info');
+    showNotification('🚀 Challenge started! Use Voice Recording on the main page!', 'info');
     setTimeout(() => window.location.href = 'index.html#practiceWord', 1500);
 }
 

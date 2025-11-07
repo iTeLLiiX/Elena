@@ -728,7 +728,10 @@ function loadProgress() {
         articleScore = progress.articleScore || 0;
         mcScore = progress.mcScore || 0;
         knownCards = progress.knownCards || 0;
-        document.getElementById('totalPoints').textContent = totalPoints;
+        const totalPointsEl = document.getElementById('totalPoints');
+        if (totalPointsEl) {
+            totalPointsEl.textContent = totalPoints;
+        }
     }
 }
 
