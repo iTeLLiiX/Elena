@@ -630,16 +630,16 @@ const multipleChoiceQuestions = [
 
 // Flashcard Data
 const flashcardData = [
-    { german: "Hallo", english: "Hello", romanian: "Salut" },
-    { german: "Danke", english: "Thank you", romanian: "Mulțumesc" },
-    { german: "Bitte", english: "Please / You're welcome", romanian: "Te rog" },
-    { german: "Guten Morgen", english: "Good morning", romanian: "Bună dimineața" },
-    { german: "Guten Tag", english: "Good day", romanian: "Bună ziua" },
-    { german: "Auf Wiedersehen", english: "Goodbye", romanian: "La revedere" },
-    { german: "Tschüss", english: "Bye", romanian: "Pa" },
-    { german: "Ja", english: "Yes", romanian: "Da" },
-    { german: "Nein", english: "No", romanian: "Nu" },
-    { german: "Entschuldigung", english: "Excuse me", romanian: "Scuză-mă" }
+    { german: "Hallo", english: "Hello" },
+    { german: "Danke", english: "Thank you" },
+    { german: "Bitte", english: "Please / You're welcome" },
+    { german: "Guten Morgen", english: "Good morning" },
+    { german: "Guten Tag", english: "Good day" },
+    { german: "Auf Wiedersehen", english: "Goodbye" },
+    { german: "Tschüss", english: "Bye" },
+    { german: "Ja", english: "Yes" },
+    { german: "Nein", english: "No" },
+    { german: "Entschuldigung", english: "Excuse me" }
 ];
 
 // ============================================
@@ -752,7 +752,6 @@ function updateFlashcardDisplay() {
     document.getElementById('flashcardFront').textContent = card.german;
     document.querySelector('.flashcard-back .flashcard-content').innerHTML = `
         <div class="translation-item">🇬🇧 ${card.english}</div>
-        <div class="translation-item">🇷🇴 ${card.romanian}</div>
     `;
     
     document.getElementById('currentCard').textContent = currentFlashcardIndex + 1;
@@ -1609,9 +1608,8 @@ function searchVocab() {
     vocabCards.forEach(card => {
         const word = card.querySelector('.word-german')?.textContent.toLowerCase() || '';
         const translation = card.querySelector('.translation-en')?.textContent.toLowerCase() || '';
-        const georgian = card.querySelector('.translation-ka')?.textContent.toLowerCase() || '';
         
-        if (word.includes(searchTerm) || translation.includes(searchTerm) || georgian.includes(searchTerm)) {
+        if (word.includes(searchTerm) || translation.includes(searchTerm)) {
             card.style.display = '';
             card.classList.add('search-highlight');
             foundCount++;
