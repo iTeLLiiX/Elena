@@ -988,7 +988,7 @@ function checkArticle(selectedArticle) {
         feedbackEl.innerHTML = `
             <div class="feedback-correct">
                 <i class="fa-solid fa-check-circle"></i>
-                <strong>Correct!</strong> It's "${question.article} ${question.word}" (${question.translation})
+                <strong>Correct!</strong> It is "${question.article} ${question.word}" (${question.translation})
             </div>
         `;
         buttons.forEach(btn => {
@@ -1033,7 +1033,7 @@ function finishArticleQuiz() {
     } else if (percentage >= 60) {
         message = '👍 Well done! Keep it up!';
     } else {
-        message = '💪 Keep practicing, you'll improve!';
+        message = '💪 Keep practicing, you will improve!';
     }
     
     feedbackEl.innerHTML = `
@@ -1160,7 +1160,7 @@ function checkMCAnswer(selectedIndex) {
         feedbackEl.innerHTML = `
             <div class="feedback-correct">
                 <i class="fa-solid fa-check-circle"></i>
-                <strong>Correct!</strong> That's the right answer.
+                <strong>Correct!</strong> That is the right answer.
             </div>
         `;
         buttons[selectedIndex].classList.add('correct');
